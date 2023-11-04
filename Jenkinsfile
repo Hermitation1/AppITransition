@@ -1,9 +1,12 @@
 pipeline {
-  agent {label "linux"}
+  agent any
+
+  
   stages {
-    stage('Hello') {
+    stage('Build') {
       steps {
-        echo "hello from Jenkinsfile"
+        npm install
+        npm run build
       }
     }
   }
