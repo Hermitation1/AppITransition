@@ -3,9 +3,7 @@ pipeline {
     docker { 
       image  'ubuntu'
     }
-  }
-}   
-
+  }  
   
   stages {
     stage('Build') {
