@@ -1,14 +1,20 @@
 pipeline {
-  agent {
-    docker { image 'ununtu:18.04' }
+  agent any
+    
   }  
   stages {
     stage('Build') {
+      agent {
+        docker { 
+          image 'ununtu:18.04'
+          reuseNode true
+        }
+      }
       steps {
-        sh "sudo apt-get update"
-        sh "sudo apt install nodejs npm"
-        sh "sudo npm install ."
-        sh "sudo npm run build"
+        sh "apt-get update"
+        sh "apt install nodejs npm"
+        sh "npm install ."
+        sh "npm run build"
       }
     }
   }
