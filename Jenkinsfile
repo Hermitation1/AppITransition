@@ -1,10 +1,7 @@
 pipeline {
-  agent { 
-    docker { 
-      image  'ubuntu'
-    }
+  agent {
+    docker { image 'ununtu:18.04' }
   }  
-  
   stages {
     stage('Build') {
       steps {
