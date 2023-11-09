@@ -9,6 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'npm install'
+                sh 'echo "Hello!"
             }
         }
         stage('Test') {
@@ -19,7 +20,7 @@ pipeline {
         stage('Deploy') { 
             steps {
                 sh './jenkins/scripts/deliver.sh'
-                sh 'sleep 100' 
+                sh 'sleep 100'
             }
         }
     }
