@@ -27,7 +27,7 @@ pipeline {
     stage('Deploy') {
       steps {
         sh './jenkins/scripts/deliver.sh'
-        sh 'sudo chown -R `whoami` /usr/local/lib/node_modules'
+        sh 'chown -R `whoami` /usr/local/lib/node_modules'
         sh 'npm install -g serve '
         sh 'serve -s build'
       }
