@@ -27,6 +27,8 @@ pipeline {
     stage('Deploy') {
       steps {
         sh './jenkins/scripts/deliver.sh'
+        sh 'npm install -g serve '
+        sh 'serve -s build'
       }
     }
 
