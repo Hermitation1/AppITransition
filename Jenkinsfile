@@ -30,5 +30,11 @@ pipeline {
       }
     }
 
+    stage('sleep') {
+      steps {
+        sleep(unit: 'MINUTES', time: 20)
+      }
+    }
+
   }
 }
